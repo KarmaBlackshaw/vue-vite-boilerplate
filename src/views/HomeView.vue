@@ -1,5 +1,3 @@
 <template>
-  <main>
-    Vue + Vite Boilerplate 🚀
-  </main>
+  Vue + Vite Boilerplate 🚀
 </template>
