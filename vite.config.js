@@ -14,15 +14,15 @@ export default defineConfig({
         'vue-router',
         'vue/macros',
         '@vueuse/head',
-        '@vueuse/core',
+        '@vueuse/core'
       ],
       dts: 'src/types/auto-imports.d.ts',
       dirs: [
         'src/composables',
-        'src/store',
+        'src/store'
       ],
-      vueTemplate: true,
-    }),
+      vueTemplate: true
+    })
   ],
 
   resolve: {
