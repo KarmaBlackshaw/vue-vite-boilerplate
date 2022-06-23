@@ -15,6 +15,9 @@
       <li>
         🎨 Tailwind
       </li>
+      <li>
+        🔃 NProgress
+      </li>
     </ul>
   </div>
 </template>
