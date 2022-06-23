@@ -5,8 +5,6 @@
 </template>
 
 <style lang="scss">
-@import '@/styles/app/_@index.scss';
-
 body, html, #app, .app-main {
   height: 100%;
 }
@@ -15,7 +13,7 @@ body, html, #app, .app-main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: theme('colors.gray.700');
+  background-color: theme('colors.gray.900');
   color: theme('colors.gray.100');
   font-size: 24px;
   font-family: "Quicksand", sans-serif;
