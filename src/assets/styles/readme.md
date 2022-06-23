@@ -1,0 +1,1 @@
+Styles folder is used for global styles only. Component styles should be put together with their component
