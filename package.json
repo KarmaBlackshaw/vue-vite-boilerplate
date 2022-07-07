@@ -1,5 +1,5 @@
 {
-  "name": "baccarat-roadmaps",
+  "name": "vue-vite-boilerplate",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
