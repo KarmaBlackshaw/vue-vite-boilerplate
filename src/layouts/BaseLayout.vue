@@ -1,16 +1,27 @@
 <template>
-  <main class="app">
-    <div class="app__navigation">
-      <router-link to="/">
-        Home
-      </router-link>
+  <main class="app dark:bg-gray-900 dark:text-gray-100">
+    <div
+      class="
+        w-[400px]
+        flex justify-between
+      "
+    >
+      <div class="flex gap-2 links-container">
+        <router-link to="/">
+          Home
+        </router-link>
 
-      <router-link to="/about">
-        About
-      </router-link>
+        <router-link to="/about">
+          About
+        </router-link>
+      </div>
+
+      <base-theme-toggle />
     </div>
 
-    <div class="app__content">
+    <div class="h-[1px] w-[400px] bg-gray-700 my-5"></div>
+
+    <div class="w-[400px] h-[300px]">
       <RouterView />
     </div>
   </main>
@@ -22,27 +33,32 @@ body, html, #app, .app {
   font-family: "Quicksand", sans-serif;
 }
 
+.links-container {
+  a {
+    color: theme('colors.gray.400');
+  }
+
+  .router-link-active {
+    font-weight: 900;
+    color: theme('colors.gray.700');
+
+    @include isDark {
+      color: theme('colors.gray.300')
+    }
+  }
+}
+
 .app {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: theme('colors.gray.900');
-  color: theme('colors.gray.100');
+  color: theme('colors.gray.900');
+  background-color: theme('colors.gray.50');
 
-  .app__navigation {
-    width: 100px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    font-size: 13px;
-    margin-bottom: 10px;
-  }
-
-  .app__content {
-    height: 300px;
-    width: 400px;
+  @include isDark {
+    background-color: theme('colors.gray.900');
+    color: theme('colors.gray.100');
   }
 }
 </style>
