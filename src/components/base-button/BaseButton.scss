@@ -1,31 +1,12 @@
 .base-button {
-  height: 35px;
-  font-size: 13px;
-  padding: 0px 10px;
-  border-radius: 5px;
+  border-radius: 3px;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition-property: border-color, background-color, color;
+  transition: 200ms ease;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-
-  &.base-button__primary {
-    background-color: theme("colors.blue.500");
-    color: white;
-  }
-
-  &.base-button__secondary {
-    background-color: theme("colors.gray.500");
-    color: white;
-  }
-
-  &.base-button__success {
-    background-color: theme("colors.green.500");
-    color: white;
-  }
-
-  &.base-button__danger {
-    background-color: theme("colors.red.500");
-    color: white;
-  }
+  line-height: 1;
 }
