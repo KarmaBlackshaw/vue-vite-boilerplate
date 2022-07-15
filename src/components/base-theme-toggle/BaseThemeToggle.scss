@@ -25,7 +25,7 @@
     background-color: theme("colors.gray.300");
     border: 1px solid theme("colors.gray.400");
 
-    @include isDark() {
+    @include isTheme(dark) {
       border: 1px solid theme("colors.gray.600");
       background-color: theme("colors.gray.700");
     }
@@ -43,7 +43,7 @@
     justify-content: center;
     align-items: center;
 
-    @include isDark() {
+    @include isTheme(dark) {
       background-color: theme("colors.zinc.900");
     }
 

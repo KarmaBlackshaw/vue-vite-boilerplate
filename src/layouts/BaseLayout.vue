@@ -19,7 +19,12 @@
       <base-theme-toggle />
     </div>
 
-    <div class="h-[1px] w-[400px] bg-gray-700 my-5"></div>
+    <div
+      class="
+        h-[1px] w-[400px]
+        bg-gray-700 my-5
+      "
+    ></div>
 
     <div class="w-[400px] h-[300px]">
       <RouterView />
@@ -42,7 +47,7 @@ body, html, #app, .app {
     font-weight: 900;
     color: theme('colors.gray.700');
 
-    @include isDark {
+    @include isTheme(dark) {
       color: theme('colors.gray.300')
     }
   }
@@ -53,10 +58,11 @@ body, html, #app, .app {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: theme('colors.gray.900');
-  background-color: theme('colors.gray.50');
+  // color: theme('colors.gray.900');
+  // background-color: theme('colors.gray.50');
+  background-color: var(--background-color);
 
-  @include isDark {
+  @include isTheme(dark) {
     background-color: theme('colors.gray.900');
     color: theme('colors.gray.100');
   }

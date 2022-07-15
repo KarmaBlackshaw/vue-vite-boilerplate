@@ -1,0 +1,9 @@
+{
+  "jsx": "preserve",
+  "allowJs": true,
+  "compilerOptions": {
+    "types": [
+      "vite/client" // if using vite
+    ]
+  }
+}

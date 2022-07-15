@@ -1,0 +1,5 @@
+:root {
+  @include isTheme(light) {
+    --background-color: blue;
+  }
+}
