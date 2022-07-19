@@ -1,4 +1,3 @@
-
 <script setup>
 import BaseLayout from '@/layouts/BaseLayout.vue'
 
