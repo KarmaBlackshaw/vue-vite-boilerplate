@@ -2,4 +2,8 @@
   @at-root #{selector-nest(':root[data-theme=#{$theme}]', &)} {
     @content;
   }
+
+  @at-root #{selector-nest(':root[class=#{$theme}]', &)} {
+    @content;
+  }
 }
