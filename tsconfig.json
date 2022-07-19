@@ -3,8 +3,6 @@
     "target": "ESNext",
     "allowJs": true,
     "jsx": "preserve",
-    "types": [
-      "vite/client" // if using vite
-    ]
+    "types": ["vite/client"]
   }
 }
