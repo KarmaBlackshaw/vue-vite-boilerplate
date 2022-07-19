@@ -21,7 +21,6 @@ export default defineConfig({
         additionalData: `
           @import "./src/assets/styles/mixins/_breakpoint.scss";
           @import "./src/assets/styles/mixins/_theme.scss";
-          @import "./src/assets/styles/root/index.scss";
         `
       }
     }

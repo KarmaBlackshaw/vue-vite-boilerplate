@@ -1,3 +1,8 @@
+<script setup>
+const {
+  t
+} = useTranslate('login')
+</script>
 <template>
   <div>
     <h1>Vue + Vite Boilerplate 🚀</h1>
