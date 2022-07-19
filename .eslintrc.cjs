@@ -19,7 +19,6 @@ module.exports = {
     "sourceType": "module"
   },
   "rules": {
-    'no-undef': 'off',
     "vue/html-self-closing": ["error", {
       "html": {
         "void": "never",
