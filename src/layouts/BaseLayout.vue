@@ -58,9 +58,6 @@ body, html, #app, .app {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  // color: theme('colors.gray.900');
-  // background-color: theme('colors.gray.50');
-  background-color: var(--background-color);
 
   @include isTheme(dark) {
     background-color: theme('colors.gray.900');
