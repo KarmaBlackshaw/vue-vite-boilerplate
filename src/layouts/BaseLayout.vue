@@ -1,8 +1,8 @@
 <template>
-  <main class="app dark:bg-gray-900 dark:text-gray-100">
+  <main class="app">
     <div
       class="
-        w-[400px]
+        w-[500px]
         flex justify-between
       "
     >
@@ -21,12 +21,13 @@
 
     <div
       class="
-        h-[1px] w-[400px]
-        bg-gray-700 my-5
+        divider
+        h-[1px] w-[500px]
+        my-5
       "
     ></div>
 
-    <div class="w-[400px] h-[300px]">
+    <div class="w-[500px] h-[300px]">
       <RouterView />
     </div>
   </main>
@@ -53,11 +54,22 @@ body, html, #app, .app {
   }
 }
 
+.divider {
+  background-color: theme('colors.gray.300');
+
+  @include isTheme(dark) {
+    background-color: theme('colors.gray.700');
+    color: theme('colors.gray.100');
+  }
+}
+
 .app {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: theme('colors.gray.50');
+  color: theme('colors.gray.900');
 
   @include isTheme(dark) {
     background-color: theme('colors.gray.900');
