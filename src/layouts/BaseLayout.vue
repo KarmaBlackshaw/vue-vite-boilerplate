@@ -68,7 +68,7 @@ body, html, #app, .app {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: theme('colors.gray.50');
+  background-color: theme('colors.stone.100');
   color: theme('colors.gray.900');
 
   @include isTheme(dark) {
