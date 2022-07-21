@@ -1,3 +1,5 @@
 {
-  "hello": "Hello"
+  "intro": {
+    "greeting": "Hello {{person}} 👋"
+  }
 }
