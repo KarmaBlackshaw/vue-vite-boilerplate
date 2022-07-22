@@ -58,9 +58,6 @@ body, html, #app, .app {
   font-family: "Quicksand", sans-serif;
 }
 
-
-
-
 .app {
   display: flex;
   justify-content: center;
