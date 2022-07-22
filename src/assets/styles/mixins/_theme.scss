@@ -3,7 +3,7 @@
     @content;
   }
 
-  @at-root #{selector-nest(':root[class=#{$theme}]', &)} {
+  @at-root #{selector-nest(':root.#{$theme}', &)} {
     @content;
   }
 }

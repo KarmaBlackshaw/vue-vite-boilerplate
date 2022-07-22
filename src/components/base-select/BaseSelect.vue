@@ -51,6 +51,8 @@ onClickOutside(target, () => isShowContent.value = false)
       @click="isShowContent = !isShowContent"
     >
       <template v-if="!selectedItem">
+        <slot></slot>
+
         <PhCaretDownBold
           class="w-3 h-3 ml-3"
         />
@@ -102,7 +104,7 @@ onClickOutside(target, () => isShowContent.value = false)
           cursor-pointer
         "
         :class="{
-          'bg-gray-100': itemValue(item) == modelValue
+          'bg-gray-100 dark:bg-gray-700': itemValue(item) == modelValue
         }"
         @click="handleItemClick({item})"
       >

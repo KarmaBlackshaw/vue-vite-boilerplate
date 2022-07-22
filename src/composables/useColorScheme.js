@@ -1,7 +1,7 @@
 export default () => {
   const isDark = useDark({
     selector: ':root',
-    attribute: 'data-theme',
+    attribute: 'class',
     valueDark: 'dark',
     valueLight: 'light'
   })

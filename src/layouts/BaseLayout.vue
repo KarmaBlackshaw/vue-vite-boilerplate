@@ -1,17 +1,35 @@
 <template>
-  <main class="app">
+  <main
+    class="
+      app
+    bg-gray-100 dark:bg-gray-900
+    text-gray-900 dark:text-gray-100
+    "
+  >
     <div
       class="
         w-[500px]
         flex justify-between
       "
     >
-      <div class="flex gap-2 links-container">
-        <router-link to="/">
+      <div class="flex gap-2 text-gray-400">
+        <router-link
+          to="/"
+          active-class="
+            font-bold
+            text-gray-700 dark:text-gray-300
+          "
+        >
           Home
         </router-link>
 
-        <router-link to="/about">
+        <router-link
+          to="/about"
+          active-class="
+            font-bold
+            text-gray-700 dark:text-gray-300
+          "
+        >
           About
         </router-link>
       </div>
@@ -24,6 +42,7 @@
         divider
         h-[1px] w-[500px]
         my-5
+        bg-gray-300 dark:gray-700
       "
     ></div>
 
@@ -39,41 +58,10 @@ body, html, #app, .app {
   font-family: "Quicksand", sans-serif;
 }
 
-.links-container {
-  a {
-    color: theme('colors.gray.400');
-  }
-
-  .router-link-active {
-    font-weight: 900;
-    color: theme('colors.gray.700');
-
-    @include isTheme(dark) {
-      color: theme('colors.gray.300')
-    }
-  }
-}
-
-.divider {
-  background-color: theme('colors.gray.300');
-
-  @include isTheme(dark) {
-    background-color: theme('colors.gray.700');
-    color: theme('colors.gray.100');
-  }
-}
-
 .app {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: theme('colors.stone.100');
-  color: theme('colors.gray.900');
-
-  @include isTheme(dark) {
-    background-color: theme('colors.gray.900');
-    color: theme('colors.gray.100');
-  }
 }
 </style>
