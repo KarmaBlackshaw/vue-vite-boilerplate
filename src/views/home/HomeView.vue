@@ -4,6 +4,17 @@ const {
   language
 } = useTranslate()
 
+const languages = [
+  {
+    text: 'Korean',
+    value: 'kr'
+  },
+  {
+    text: 'English',
+    value: 'en'
+  }
+]
+
 </script>
 
 <template>
@@ -15,7 +26,7 @@ const {
     </div>
 
     <h1>
-      Vue + Vite Boilerplate 🚀
+      {{ t('project.name') }}
     </h1>
 
     <ul>
@@ -47,24 +58,16 @@ const {
       <li class="mb-3">
         <VscodeIconsFileTypeLocale class="inline mr-2" />
 
-        <select
+        <base-select
           v-model="language"
-          class="
-            w-[200px]
-            px-2 py-1
-            rounded
-            text-gray-900
-            text-sm
-          "
+          :items="languages"
+          :item-text="item => item.text"
+          :item-value="item => item.value"
+          class="w-[200px]"
+          outlined
         >
-          <option value="en">
-            En
-          </option>
-
-          <option value="kr">
-            Kr
-          </option>
-        </select>
+          Select Language
+        </base-select>
       </li>
     </ul>
   </div>
