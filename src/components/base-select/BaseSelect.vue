@@ -79,37 +79,18 @@ onClickOutside(target, () => isShowContent.value = false)
         hidden: !isShowContent
       }"
     >
-      <div
-        class="
-          block
-          px-3 py-1
-          text-sm text-gray-400 dark:text-gray-300 capitalize
-          transition-colors duration-200 transform
-          hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white
-          cursor-pointer
-        "
-      >
+      <base-select-item is-disabled>
         <slot></slot>
-      </div>
+      </base-select-item>
 
-      <div
+      <base-select-item
         v-for="(item, itemKey) in items"
         :key="itemKey"
-        class="
-          block
-          px-3 py-1
-          text-sm text-gray-600 dark:text-gray-300 capitalize
-          transition-colors duration-200 transform
-          hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white
-          cursor-pointer
-        "
-        :class="{
-          'bg-gray-100 dark:bg-gray-700': itemValue(item) == modelValue
-        }"
-        @click="handleItemClick({item})"
+        :is-selected="itemValue(item) == modelValue"
+        @click="handleItemClick({ item })"
       >
         {{ itemText(item) }}
-      </div>
+      </base-select-item>
     </div>
   </div>
 </template>
