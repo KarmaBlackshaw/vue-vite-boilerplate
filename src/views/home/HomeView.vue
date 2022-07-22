@@ -65,6 +65,7 @@ const languages = [
           :item-value="item => item.value"
           class="w-[200px]"
           outlined
+          color="white"
         >
           Select Language
         </base-select>
