@@ -24,30 +24,27 @@ const cache = new Map()
 export default _options => {
   const options = Object.assign({
     default_locale: 'en',
-    debug: false
+    debug: false,
+    show_warning: true
   }, _options)
 
   const language = useLocalStorage('language')
 
   function t (key, dictionary) {
-    const keySplit = key.split('.')
-
-    const path = [language.value, ...keySplit]
-    const pathCacheKey = path.join('.')
+    const path = `${language.value}.${key}`
 
     if (options.debug) {
       console.log('path', path)
-      console.log('pathCacheKey', pathCacheKey)
     }
 
-    if (cache.has(pathCacheKey)) {
-      return cache.get(pathCacheKey)
+    if (cache.has(path)) {
+      return cache.get(path)
     }
 
     const word = _get(
       locales,
-      pathCacheKey,
-      _get(locales, [options.default_locale, ...keySplit], key) // fallback
+      path,
+      _get(locales, `${options.default_locale}.${key}`, key) // fallback
     )
 
     /**
@@ -57,10 +54,10 @@ export default _options => {
      */
     const isWordNil = _isNil(word)
     if (!isWordNil && _isEmpty(dictionary)) {
-      cache.set(pathCacheKey, word)
+      cache.set(path, word)
     }
 
-    if (isWordNil) {
+    if (isWordNil && options.show_warning) {
       console.warn(`Translation for "${key}" is not found.`)
     }
 
