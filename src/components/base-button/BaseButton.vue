@@ -135,14 +135,19 @@ const btnClasses = computed(() => {
     if (props.color === 'white') {
       if (props.outlined) {
         classList.push(
-          'border border-gray-300 hover:border-gray-400',
-          'text-gray-300 hover:text-gray-400'
+          'border border-neutral-500 hover:border-neutral-400 dark:border-neutral-100',
+          'text-neutral-500 hover:text-neutral-400 dark:text-neutral-100'
         )
       } else {
         classList.push(
-          'border border-gray-300 hover:border-gray-400',
-          'bg-gray-300 hover:bg-gray-400',
-          'text-gray-800 hover:text-gray-700'
+          'border border-neutral-100 hover:border-neutral-200',
+          'dark:border-neutral-100 hover:border-neutral-200',
+
+          'bg-neutral-100 hover:bg-neutral-200',
+          'dark:bg-neutral-100 dark:hover:bg-neutral-200',
+
+          'text-neutral-900 hover:text-neutral-800',
+          'dark:text-neutral-900 dark:hover:text-neutral-800'
         )
       }
     }
@@ -185,7 +190,7 @@ const btnClasses = computed(() => {
 
 <template>
   <button
-    class="base-button"
+    class="rounded tracking-wide uppercase font-bold flex justify-center items-center leading-3"
     :class="btnClasses"
   >
     <base-loader
@@ -196,7 +201,3 @@ const btnClasses = computed(() => {
     <slot></slot>
   </button>
 </template>
-
-<style lang="scss" scoped>
-@import './BaseButton';
-</style>
