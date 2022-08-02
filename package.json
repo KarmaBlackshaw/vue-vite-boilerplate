@@ -7,7 +7,8 @@
     "preview": "vite preview --port 4173",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@vueuse/core": "^8.6.0",
@@ -31,6 +32,7 @@
     "babel-loader": "^8.2.5",
     "eslint": "^8.5.0",
     "eslint-plugin-vue": "^8.2.0",
+    "husky": "^8.0.1",
     "postcss": "^8.4.14",
     "sass": "^1.52.1",
     "storybook-addon-sass-postcss": "^0.1.3",
