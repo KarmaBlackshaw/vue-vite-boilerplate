@@ -21,14 +21,14 @@ const locales = (() => {
 
 const cache = new Map()
 
+const language = useLocalStorage('language')
+
 export default _options => {
   const options = Object.assign({
     default_locale: 'en',
     debug: false,
     show_warning: true
   }, _options)
-
-  const language = useLocalStorage('language')
 
   function t (key, dictionary) {
     const path = `${language.value}.${key}`
