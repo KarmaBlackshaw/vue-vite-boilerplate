@@ -1,9 +1,7 @@
-export function template (str, data) {
-  return str.replace(/{{(.+?)}}/g, (_, p1) => data[trim(p1)]) || ''
-}
+import _ from 'lodash'
 
-export function trim (str) {
-  return str && str.trim()
+export function template (str, data) {
+  return str.replace(/{{(.+?)}}/g, (key, p1) => data[_.trim(p1)]) || ''
 }
 
 export function truncate (str, maxLength) {
