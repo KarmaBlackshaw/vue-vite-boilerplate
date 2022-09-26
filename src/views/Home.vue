@@ -1,62 +1,41 @@
 <script setup>
 const {
   t,
-  language
+  language,
+  languages
 } = useTranslate()
-
-const languages = [
-  {
-    text: 'Korean',
-    value: 'kr'
-  },
-  {
-    text: 'English',
-    value: 'en'
-  }
-]
 
 </script>
 
 <template>
   <div>
-    <div class="text-center">
-      <span class="text-sm ">
-        {{ t('intro.greeting', { person: 'developer' }) }}
-      </span>
-    </div>
-
-    <h1>
+    <h1 class="text-2xl text-center mb-5">
       {{ t('project.name') }}
     </h1>
 
-    <ul>
-      <li class="mb-3">
-        <EmojioneV1LightningMood class="inline mr-2" />
-
+    <ul class="flex flex-col gap-3">
+      <li class="flex items-center gap-2">
+        <icon-emojione-v1:lightning-mood />
         Vue 3 and Vite 2
       </li>
 
-      <li class="mb-3">
-        <VscodeIconsFileTypePackage class="inline mr-2" />
+      <li class="flex items-center gap-2">
+        <icon-vscode-icons:file-type-package />
         Auto import components and apis on-demand
       </li>
 
-      <li class="mb-3">
-        <IconParkNewspaperFolding class="inline mr-2" />
-        Document components with storybook
-      </li>
-
-      <li class="mb-3">
-        <VscodeIconsFileTypeTailwind class="inline mr-2" />
+      <li class="flex items-center gap-2">
+        <icon-vscode-icons:file-type-tailwind />
         Tailwind
       </li>
 
-      <li class="mb-3">
-        <MdiProgressHelper class="inline mr-2" /> NProgress
+      <li class="flex items-center gap-2">
+        <icon-mdi:progress-helper />
+        NProgress
       </li>
 
-      <li class="mb-3">
-        <VscodeIconsFileTypeLocale class="inline mr-2" />
+      <li class="flex items-center gap-2">
+        <icon-vscode-icons:file-type-locale />
 
         <base-select
           v-model="language"

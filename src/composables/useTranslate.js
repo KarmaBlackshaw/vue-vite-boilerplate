@@ -23,6 +23,17 @@ const cache = new Map()
 
 const language = useLocalStorage('language')
 
+const languages =[
+  {
+    text: 'Korean',
+    value: 'kr'
+  },
+  {
+    text: 'English',
+    value: 'en'
+  }
+]
+
 export default _options => {
   const options = Object.assign({
     default_locale: 'en',
@@ -68,6 +79,7 @@ export default _options => {
 
   return {
     t,
-    language
+    language,
+    languages
   }
 }

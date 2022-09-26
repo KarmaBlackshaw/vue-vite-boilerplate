@@ -1,7 +1,4 @@
 {
-  "intro": {
-    "greeting": "Hello {{person}} 👋"
-  },
   "project": {
     "name": "Vue + Vite Boilerplate 🚀"
   }

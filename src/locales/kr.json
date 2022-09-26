@@ -1,5 +1,5 @@
 {
-  "intro": {
-    "greeting": "Annyeong {{person}} 👋"
+  "project": {
+    "name": "Vue + Vite 상용구 🚀"
   }
 }
