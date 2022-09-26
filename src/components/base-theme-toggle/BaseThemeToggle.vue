@@ -30,7 +30,7 @@ const {
         flex items-center justify-between
         relative
         rounded-xl
-        bg-gray-700
+        bg-gray-100 dark:bg-gray-700
         border
         border-gray-400/50 dark:border-gray-700
       "
