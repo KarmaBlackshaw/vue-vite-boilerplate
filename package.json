@@ -21,6 +21,12 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
+    "@iconify-json/emojione-v1": "^1.1.2",
+    "@iconify-json/fxemoji": "^1.1.2",
+    "@iconify-json/icon-park": "^1.1.6",
+    "@iconify-json/mdi": "^1.1.33",
+    "@iconify-json/twemoji": "^1.1.5",
+    "@iconify-json/vscode-icons": "^1.1.12",
     "@vitejs/plugin-vue": "^2.3.3",
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",

@@ -11,27 +11,41 @@ const {
     <input
       id="checkbox"
       type="checkbox"
-      class="checkbox"
+      class="
+        checkbox
+        opacity-0
+        absolute
+      "
       :checked="isDark"
       @change="toggleColorScheme()"
     >
 
     <label
       for="checkbox"
-      class="label"
+      class="
+        label
+        cursor-pointer
+        w-[50px] h-[26px]
+        p-1
+        flex items-center justify-between
+        relative
+        rounded-xl
+        bg-gray-700
+        border
+        border-gray-400/50 dark:border-gray-700
+      "
     >
+      <div
+        class="
+          ball
+          w-[20px] h-[20px]
+          absolute
+          flex items-center justify-center
+        "
+      >
+        <icon-fxemoji:whitesun v-if="isDark" />
 
-      <div class="ball">
-        <img
-          v-if="isDark"
-          src="./assets/images/sun-3.png"
-          alt=""
-        >
-        <img
-          v-else
-          src="./assets/images/moon-3.png"
-          alt=""
-        >
+        <icon-twemoji:full-moon v-else />
       </div>
     </label>
   </div>

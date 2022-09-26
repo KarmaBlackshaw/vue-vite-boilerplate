@@ -5,51 +5,9 @@
   $height: 26px;
   $padding: 5px;
 
-  user-select: none;
-
-  .checkbox {
-    opacity: 0;
-    position: absolute;
-  }
-
-  .label {
-    cursor: pointer;
-    width: $width;
-    height: $height;
-    padding: $padding;
-    display: flex;
-    border-radius: 20px;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    background-color: theme("colors.gray.300");
-    border: 1px solid theme("colors.gray.400");
-
-    @include isTheme(dark) {
-      border: 1px solid theme("colors.gray.600");
-      background-color: theme("colors.gray.700");
-    }
-  }
-
   .ball {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    border-radius: 50%;
     transition: transform 0.2s linear;
-    background-color: theme("colors.zinc.100");
     transform: translateX((math.div($padding, 2)) * -1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @include isTheme(dark) {
-      background-color: theme("colors.zinc.900");
-    }
-
-    img {
-      height: 13px;
-    }
 
     .fade-enter-active,
     .fade-leave-active {
@@ -65,13 +23,5 @@
   /*  target the elemenent after the label*/
   .checkbox:checked + .label .ball {
     transform: translateX(math.div($width, 2) - $padding);
-  }
-
-  .fa-moon {
-    color: pink;
-  }
-
-  .fa-sun {
-    color: yellow;
   }
 }
