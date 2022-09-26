@@ -28,6 +28,7 @@ module.exports = {
       "error",
       "as-needed"
     ],
+    "vue/multi-word-component-names": "off",
     "vue/component-name-in-template-casing": ["error", "kebab-case"],
     "arrow-spacing": "error",
     "block-spacing": "error",

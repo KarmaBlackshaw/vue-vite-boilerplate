@@ -3,7 +3,7 @@ import nprogress from '@/plugins/nprogress'
 
 const lazyLoad = name => () => import(`../views/${name}.vue`)
 
-import HomeView from '../views/home/HomeView.vue'
+import HomeView from '../views/Home.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,7 +16,7 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      component: lazyLoad('AboutView')
+      component: lazyLoad('About')
     }
   ]
 })

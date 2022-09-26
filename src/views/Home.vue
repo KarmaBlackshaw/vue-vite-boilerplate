@@ -73,7 +73,3 @@ const languages = [
     </ul>
   </div>
 </template>
-
-<style lang="scss" scoped>
-@import './HomeView';
-</style>
