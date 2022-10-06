@@ -25,6 +25,7 @@
     "@iconify-json/fxemoji": "^1.1.2",
     "@iconify-json/icon-park": "^1.1.6",
     "@iconify-json/mdi": "^1.1.33",
+    "@iconify-json/ph": "^1.1.2",
     "@iconify-json/twemoji": "^1.1.5",
     "@iconify-json/vscode-icons": "^1.1.12",
     "@vitejs/plugin-vue": "^2.3.3",

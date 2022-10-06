@@ -53,9 +53,7 @@ onClickOutside(target, () => isShowContent.value = false)
       <template v-if="!selectedItem">
         <slot></slot>
 
-        <PhCaretDownBold
-          class="w-3 h-3 ml-3"
-        />
+        <icon-ph:caret-down-bold class="w-3 h-3 ml-3" />
       </template>
 
       <template v-else>
