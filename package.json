@@ -22,8 +22,11 @@
   "devDependencies": {
     "@babel/core": "^7.18.5",
     "@iconify-json/emojione-v1": "^1.1.2",
+    "@iconify-json/eos-icons": "^1.1.2",
     "@iconify-json/fxemoji": "^1.1.2",
+    "@iconify-json/ic": "^1.1.9",
     "@iconify-json/icon-park": "^1.1.6",
+    "@iconify-json/material-symbols": "^1.1.22",
     "@iconify-json/mdi": "^1.1.33",
     "@iconify-json/ph": "^1.1.2",
     "@iconify-json/twemoji": "^1.1.5",
