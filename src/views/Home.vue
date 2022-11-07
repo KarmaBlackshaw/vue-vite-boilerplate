@@ -5,6 +5,11 @@ const {
   languages
 } = useTranslate()
 
+const iconClass = `
+  h-[15px] min-h-[15px]
+  w-[15px] min-w-[15px]
+`
+
 </script>
 
 <template>
@@ -14,32 +19,32 @@ const {
     </h1>
 
     <ul class="flex flex-col gap-3">
-      <li class="flex items-center gap-2">
-        <icon-emojione-v1:lightning-mood />
+      <li class="flex items-center gap-3">
+        <icon-emojione-v1:lightning-mood :class="iconClass" />
 
         Vue 3 and Vite 2
       </li>
 
-      <li class="flex items-center gap-2">
-        <icon-vscode-icons:file-type-package />
+      <li class="flex items-center gap-3">
+        <icon-vscode-icons:file-type-package :class="iconClass" />
 
         Auto import components, icons, and apis on-demand
       </li>
 
-      <li class="flex items-center gap-2">
-        <icon-vscode-icons:file-type-tailwind />
+      <li class="flex items-center gap-3">
+        <icon-vscode-icons:file-type-tailwind :class="iconClass" />
 
         Tailwind
       </li>
 
-      <li class="flex items-center gap-2">
-        <icon-mdi:progress-helper />
+      <li class="flex items-center gap-3">
+        <icon-mdi:progress-helper :class="iconClass" />
 
         NProgress
       </li>
 
-      <li class="flex items-center gap-2">
-        <icon-vscode-icons:file-type-locale />
+      <li class="flex items-center gap-3">
+        <icon-vscode-icons:file-type-locale :class="iconClass" />
 
         <base-select
           v-model="language"
