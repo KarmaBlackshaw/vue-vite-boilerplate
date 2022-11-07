@@ -16,21 +16,25 @@ const {
     <ul class="flex flex-col gap-3">
       <li class="flex items-center gap-2">
         <icon-emojione-v1:lightning-mood />
+
         Vue 3 and Vite 2
       </li>
 
       <li class="flex items-center gap-2">
         <icon-vscode-icons:file-type-package />
-        Auto import components and apis on-demand
+
+        Auto import components, icons, and apis on-demand
       </li>
 
       <li class="flex items-center gap-2">
         <icon-vscode-icons:file-type-tailwind />
+
         Tailwind
       </li>
 
       <li class="flex items-center gap-2">
         <icon-mdi:progress-helper />
+
         NProgress
       </li>
 
@@ -44,7 +48,6 @@ const {
           :item-value="item => item.value"
           class="w-[200px]"
           outlined
-          color="white"
         >
           Select Language
         </base-select>

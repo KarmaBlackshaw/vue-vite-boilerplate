@@ -1,12 +1,5 @@
-<script setup>
-import BaseLayout from '@/layouts/BaseLayout.vue'
-
-const layout = computed(() => {
-  return BaseLayout
-})
-
-</script>
-
 <template>
-  <layout />
+  <the-layout>
+    <router-view />
+  </the-layout>
 </template>

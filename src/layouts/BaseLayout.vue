@@ -1,9 +1,10 @@
 <template>
   <main
     class="
-      app
-    bg-white dark:bg-gray-900
-    text-gray-900 dark:text-gray-100
+      flex justify-center items-center flex-col
+      bg-white dark:bg-gray-900
+      text-gray-900 dark:text-gray-100
+      h-full
     "
   >
     <div
@@ -51,17 +52,3 @@
     </div>
   </main>
 </template>
-
-<style lang="scss">
-body, html, #app, .app {
-  height: 100%;
-  font-family: "Quicksand", sans-serif;
-}
-
-.app {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-</style>
