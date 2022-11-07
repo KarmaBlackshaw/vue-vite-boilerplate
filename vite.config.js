@@ -20,8 +20,9 @@ export default defineConfig({
       autoInstall: true
     }),
     Components({
-      dirs: ['src/components', 'src/assets/icons'],
+      dirs: ['src/components'],
       dts: 'src/types/components.d.ts',
+      directoryAsNamespace: true,
       resolvers: [
         IconsResolver({
           prefix: 'icon'
