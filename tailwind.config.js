@@ -10,7 +10,6 @@ export default {
     extend: {}
   },
   plugins: [
-
     plugin(function ({ addVariant }) {
       addVariant('not-last', '&:not(:last-child)')
       addVariant('last', '&:last-child')

@@ -1,8 +1,6 @@
 <script setup>
 const {
-  t,
-  language,
-  languages
+  t
 } = useTranslate()
 
 const iconClass = `
@@ -41,21 +39,6 @@ const iconClass = `
         <icon-mdi:progress-helper :class="iconClass" />
 
         NProgress
-      </li>
-
-      <li class="flex items-center gap-3">
-        <icon-vscode-icons:file-type-locale :class="iconClass" />
-
-        <base-select
-          v-model="language"
-          :items="languages"
-          :item-text="item => item.text"
-          :item-value="item => item.value"
-          class="w-[200px]"
-          outlined
-        >
-          Select Language
-        </base-select>
       </li>
     </ul>
   </div>

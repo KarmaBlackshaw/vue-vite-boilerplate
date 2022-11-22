@@ -1,9 +1,0 @@
-@mixin isTheme($theme) {
-  @at-root #{selector-nest(':root[data-theme=#{$theme}]', &)} {
-    @content;
-  }
-
-  @at-root #{selector-nest(':root.#{$theme}', &)} {
-    @content;
-  }
-}

@@ -54,16 +54,7 @@ export default defineConfig({
   ],
 
   css: {
-    postcss,
-    preprocessorOptions: {
-      scss: {
-        additionalData: `
-          @import "./src/assets/styles/mixins/_breakpoint.scss";
-          @import "./src/assets/styles/mixins/_theme.scss";
-          @import "./src/assets/styles/root/index.scss";
-        `
-      }
-    }
+    postcss
   },
 
   server: {
