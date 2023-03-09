@@ -8,8 +8,6 @@ const iconClass = `
   w-[15px] min-w-[15px]
 `
 
-const foo = 'afsafdasdsfdf'
-
 </script>
 
 <template>

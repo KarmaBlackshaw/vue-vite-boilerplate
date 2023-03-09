@@ -6,7 +6,8 @@
     "build": "vite build",
     "preview": "vite preview --port 4173",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "release": "release-it"
+    "release": "release-it",
+    "prepare": "npx simple-git-hooks"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
@@ -14,6 +15,7 @@
     "lodash": "^4.17.21",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.14",
+    "simple-git-hooks": "^2.8.1",
     "sweetalert2": "^11.4.20",
     "vue": "^3.2.36",
     "vue-router": "^4.0.15"
@@ -36,6 +38,7 @@
     "esbuild": "^0.15.15",
     "eslint": "^8.5.0",
     "eslint-plugin-vue": "^8.2.0",
+    "lint-staged": "^13.1.2",
     "postcss": "^8.4.14",
     "release-it": "^15.2.0",
     "sass": "^1.52.1",
@@ -45,5 +48,11 @@
     "unplugin-vue-components": "^0.19.6",
     "vite": "^3.2.4",
     "vue-loader": "^16.8.3"
+  },
+  "lint-staged": {
+    "*.vue": "eslint"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
   }
 }
