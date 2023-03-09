@@ -9,7 +9,10 @@ import {
 } from '@/utils/string'
 
 const locales = (() => {
-  const files = import.meta.globEager('../locales/*.json')
+  const files = import.meta.glob('../locales/*.json', {
+    eager: true
+  })
+
   const localesMap = {}
   for (const filename in files) {
     const translations = files[filename].default
@@ -23,7 +26,7 @@ const cache = new Map()
 
 const language = useLocalStorage('language')
 
-const languages =[
+const languages = [
   {
     text: 'Korean',
     value: 'kr'
