@@ -8,6 +8,8 @@ const iconClass = `
   w-[15px] min-w-[15px]
 `
 
+const foo = 'asdf'
+
 </script>
 
 <template>
@@ -22,6 +24,8 @@ const iconClass = `
 
         Vue 3 and Vite 2
       </li>
+
+      <icon-zondicons:airplane />
 
       <li class="flex items-center gap-3">
         <icon-vscode-icons:file-type-package :class="iconClass" />
