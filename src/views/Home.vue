@@ -8,7 +8,7 @@ const iconClass = `
   w-[15px] min-w-[15px]
 `
 
-const foo = 'asdf'
+const foo = 'asadsfdf'
 
 </script>
 
