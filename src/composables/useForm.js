@@ -13,12 +13,12 @@ const {
 
  */
 export default initialState => {
-  const form = reactive({ ...initialState })
+  const form = ref({ ...initialState })
 
   function reset () {
     for (const key in initialState) {
-      if (Object.hasOwnProperty.call(initialState, key)) {
-        form[key] = initialState[key]
+      if (key in initialState) {
+        form.value[key] = initialState[key]
       }
     }
   }

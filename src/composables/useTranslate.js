@@ -1,48 +1,40 @@
+import locales from '@/locales'
+
 // libs
-import _get from 'lodash/get'
-import _isNil from 'lodash/isNil'
-import _isEmpty from 'lodash/isEmpty'
+import _ from 'lodash'
 
 // utils
-import {
-  template
-} from '@/utils/string'
+import renderTemplate from '@/utils/renderTemplate'
 
-const locales = (() => {
-  const files = import.meta.glob('../locales/*.json', {
-    eager: true
-  })
-
-  const localesMap = {}
-  for (const filename in files) {
-    const translations = files[filename].default
-    const language = filename.match(/(\w+)\.json$/)[1]
-    localesMap[language] = translations
-  }
-  return localesMap
-})()
-
-const cache = new Map()
-
-const language = useLocalStorage('language')
-
-const languages = [
-  {
-    text: 'Korean',
-    value: 'kr'
-  },
+// constants
+const SHOW_WARNING = false
+const DEFAULT_LOCALE = 'en'
+const LANGUAGES = [
   {
     text: 'English',
     value: 'en'
+  },
+  {
+    text: 'Korean',
+    value: 'kr'
   }
 ]
 
+const language = useLocalStorage('language', DEFAULT_LOCALE)
+
+const missingTranslations = ref(new Set())
 export default _options => {
   const options = Object.assign({
-    default_locale: 'en',
-    debug: false,
-    show_warning: true
+    debug: false
   }, _options)
+
+  const isValidLanguage = computed(() => {
+    return LANGUAGES.some(x => x.value === language.value)
+  })
+
+  if (!isValidLanguage.value) {
+    language.value = DEFAULT_LOCALE
+  }
 
   function t (key, dictionary) {
     const path = `${language.value}.${key}`
@@ -51,38 +43,56 @@ export default _options => {
       console.log('path', path)
     }
 
-    if (cache.has(path)) {
-      return cache.get(path)
+    const currentLocaleWord = _.get(locales, path)
+    const defaultLocaleWord = _.get(locales, `${options.default_locale}.${key}`)
+    const word = currentLocaleWord || defaultLocaleWord || key
+
+    const isWordNil = _.isNil(currentLocaleWord || defaultLocaleWord)
+
+    if (isWordNil && SHOW_WARNING) {
+      missingTranslations.value.add(key)
+      console.warn(`Missing translations: `, Array.from(missingTranslations.value))
     }
 
-    const word = _get(
-      locales,
-      path,
-      _get(locales, `${options.default_locale}.${key}`, key) // fallback
-    )
-
-    /**
-     * Only cache if dictionary is empty
-     * because locales with dictionary is
-     * dynamic
-     */
-    const isWordNil = _isNil(word)
-    if (!isWordNil && _isEmpty(dictionary)) {
-      cache.set(path, word)
-    }
-
-    if (isWordNil && options.show_warning) {
-      console.warn(`Translation for "${key}" is not found.`)
-    }
-
-    return _isEmpty(dictionary)
+    return _.isEmpty(dictionary)
       ? word
-      : template(word, dictionary)
+      : renderTemplate(word, dictionary)
+  }
+
+  function tProperty (item, obj = {}) {
+    const dictionary = {
+      en: item[obj.en || 'name'],
+      kr: item[obj.kr || 'kor']
+    }
+
+    const currentLocaleWord = _.get(dictionary, language.value)
+    const defaultLocaleWord = _.get(dictionary, DEFAULT_LOCALE)
+    const word = _.isEmpty(currentLocaleWord)
+      ? defaultLocaleWord
+      : currentLocaleWord
+
+    return word
+  }
+
+  function toggle () {
+    const currentIndex = LANGUAGES.findIndex(x => x.value === language.value)
+
+    if (currentIndex === -1) {
+      language.value = DEFAULT_LOCALE
+      return
+    }
+
+    const nextLanguage = (currentIndex + 1) % LANGUAGES.length
+    language.value = LANGUAGES[nextLanguage].value
+
+    return
   }
 
   return {
     t,
     language,
-    languages
+    languages: LANGUAGES,
+    toggle,
+    tProperty
   }
 }

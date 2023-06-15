@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import nprogress from '@/plugins/nprogress'
 
-const lazyLoad = name => () => import(`../views/${name}.vue`)
-
 import Home from '../views/Home.vue'
 
 const router = createRouter({
@@ -16,10 +14,27 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      component: lazyLoad('About')
+      component: () => import(`../views/About.vue`)
     }
   ]
 })
+
+router.beforeEach(async (to, from, next) => {
+  if (to.meta.middlewares) {
+    const middlewares = to.meta.middlewares || []
+    for (let i = 0; i < middlewares.length; i++) {
+      const middleware = middlewares[i]
+      await middleware(to, from, next)
+    }
+  } else {
+    next()
+  }
+})
+
+const originalPush = router.push
+router.push = function push (location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 
 const plugins = [
   nprogress

@@ -20,8 +20,8 @@ export default defineConfig({
       autoInstall: true
     }),
     Components({
-      dirs: ['src/components'],
-      dts: 'src/types/components.d.ts',
+      dirs: ['src/components', 'src/layouts'],
+      dts: 'components.d.ts',
       directoryAsNamespace: true,
       resolvers: [
         IconsResolver({
@@ -32,17 +32,18 @@ export default defineConfig({
     AutoImport({
       imports: [
         'vue',
+        'pinia',
         'vue-router',
         'vue/macros',
         '@vueuse/head',
         '@vueuse/core'
       ],
 
-      dts: 'src/types/auto-imports.d.ts',
+      dts: 'auto-imports.d.ts',
 
       dirs: [
         'src/composables',
-        'src/store'
+        'src/stores'
       ],
 
       vueTemplate: true,
@@ -58,7 +59,8 @@ export default defineConfig({
   },
 
   server: {
-    port: 6376
+    port: 6376,
+    host: true
   },
 
   resolve: {

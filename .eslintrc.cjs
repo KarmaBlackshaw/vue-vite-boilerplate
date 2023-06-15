@@ -23,6 +23,9 @@ module.exports = {
       "error",
       "never"
     ],
+    "no-use-before-define": ["error", {
+      "functions": false
+    }],
     "array-callback-return": "error",
     "arrow-parens": [
       "error",
@@ -33,7 +36,9 @@ module.exports = {
     "arrow-spacing": "error",
     "block-spacing": "error",
     "brace-style": "error",
-    "camelcase": "off",
+    "camelcase": ["error", {
+      "properties": "never"
+    }],
     "comma-dangle": "error",
     "comma-spacing": [
       "error",
@@ -54,7 +59,7 @@ module.exports = {
       }
     ],
     "no-alert": "off",
-    "no-await-in-loop": "error",
+    "no-await-in-loop": "off",
     "no-console": "off",
     "no-debugger": "off",
     "no-else-return": "error",
